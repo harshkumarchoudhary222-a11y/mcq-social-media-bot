@@ -1,0 +1,8 @@
+Exam: SSC JE Civil
+Q. The purpose of providing weep holes in a retaining wall is to:
+A) Increase the strength of the wall
+B) Relieve the hydrostatic pressure behind the wall
+C) Prevent seepage of rainwater into the wall
+D) Improve the appearance of the wall
+Answer: B
+Explanation: Weep holes allow water behind the wall to drain, reducing hydrostatic pressure.
