@@ -5,7 +5,7 @@ LETTER_MAP = {"A": 0, "B": 1, "C": 2, "D": 3}
 
 
 def _clean(line: str) -> str:
-    return re.sub(r"\\s+", " ", line.strip())
+    return re.sub(r"\s+", " ", line.strip())
 
 
 def parse_mcq(text: str) -> Dict:
@@ -20,8 +20,8 @@ def parse_mcq(text: str) -> Dict:
     explanation = ""
     exam = "General MCQ"
 
-    option_re = re.compile(r"^(?:([A-D])\\s*[.)]|\\(?([A-D])\\)\\s*)(.*)$", re.I)
-    answer_re = re.compile(r"^(?:answer|ans|correct answer)\\s*[:=-]?\\s*([A-D])(?:\\b|\\.)", re.I)
+    option_re = re.compile(r"^(?:([A-D])\s*[.)]|\(?([A-D])\)\s*)(.*)$", re.I)
+    answer_re = re.compile(r"^(?:answer|ans|correct answer)\s*[:=-]?\s*([A-D])(?:\b|\\.)", re.I)
 
     for line in lines:
         low = line.lower()
@@ -40,7 +40,7 @@ def parse_mcq(text: str) -> Dict:
             explanation = re.split(r"[:=-]", line, 1)[1].strip()
             continue
         if not question:
-            question = re.sub(r"^(?:q(?:uestion)?\\s*[:.)-]?\\s*)", "", line, flags=re.I)
+            question = re.sub(r"^(?:q(?:uestion)?\s*[:.)-]?\s*)", "", line, flags=re.I)
         elif not explanation:
             explanation = line
 
